@@ -5,27 +5,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        surface: "var(--surface)",
-        ink: "var(--ink)",
-        muted: "var(--muted)",
-        line: "var(--line)",
-        state: "var(--state)",
+        obsidian: "#0A0A0C",
+        bone: "#F4F1EA",
+        accent: "#C9EBD8",
       },
       fontFamily: {
-        sans: [
-          "system-ui",
-          "sans-serif",
-        ],
-        mono: [
-          "ui-monospace",
-          "SFMono-Regular",
-          "Menlo",
-          "Consolas",
-          "monospace",
-        ],
+        sans: ["var(--font-syne)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        page: "720px",
+        page: "72rem",
       },
     },
   },

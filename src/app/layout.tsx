@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { JetBrains_Mono, Syne } from "next/font/google";
+import { SiteChrome } from "@/components/site-chrome";
 import "./globals.css";
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Raqib Rasheed",
   description:
-    "Senior team lead at Deloitte. Interface studies first, shipped work behind them.",
+    "Senior frontend engineer in Bangalore. Work at Deloitte, Medline, Growfin, and Turbolab.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -17,8 +31,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${syne.variable} ${mono.variable}`}>
+      <body className="font-sans antialiased">
+        <SiteChrome>{children}</SiteChrome>
+      </body>
     </html>
   );
 }
